@@ -12,9 +12,11 @@ function searchCity() {
   fetch(api)
     .then(response => response.json())
     .then((data) => {
-      console.log(data.name);
+      console.log(data);
       cityInfo.innerHTML= `
       <h2 id="city-name">${data.name}</h2>
+      <p id="weather-description">${data.weather[0].description}</p>
+
       `
     });
 }
