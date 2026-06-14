@@ -1,64 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard do Clima</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard do Clima</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>🌤 Dashboard do Clima</h1>
 
-  <main class="container">
+      <section class="search-box">
+        <input type="text" id="city-input" placeholder="Digite uma cidade..." />
 
-    <h1>🌤 Dashboard do Clima</h1>
+        <button id="search-btn">Buscar</button>
+      </section>
 
-    <section class="search-box">
-      <input
-        type="text"
-        id="city-input"
-        placeholder="Digite uma cidade..."
-      >
-
-      <button id="search-btn">
-        Buscar
-      </button>
-    </section>
-
-    <section id="weather-card">
-
-      <div class="city-info">
-        <h2 id="city-name">---</h2>
-        <p id="weather-description">---</p>
-      </div>
-
-      <div class="temperature">
-        <span id="temperature">--°C</span>
-      </div>
-
-      <div class="weather-details">
-
-        <div class="detail">
-          <h3>💧 Umidade</h3>
-          <p id="humidity">--%</p>
+      <section id="weather-card">
+        <div class="city-info">
+          <h2 id="city-name">---</h2>
+          <p id="weather-description">---</p>
         </div>
 
-        <div class="detail">
-          <h3>🌬 Vento</h3>
-          <p id="wind-speed">-- km/h</p>
+        <div class="temperature">
+          <span id="temperature">--°C</span>
         </div>
 
-        <div class="detail">
-          <h3>🌡 Sensação</h3>
-          <p id="feels-like">--°C</p>
+        <div class="weather-details">
+          <div class="detail umidity">
+            <h3>💧 Umidade</h3>
+            <p id="humidity">--%</p>
+          </div>
+
+          <div class="detail wind">
+            <h3>🌬 Vento</h3>
+            <p id="wind-speed">-- km/h</p>
+          </div>
+
+          <div class="detail feels">
+            <h3>🌡 Sensação</h3>
+            <p id="feels-like">--°C</p>
+          </div>
         </div>
+      </section>
+    </main>
 
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
