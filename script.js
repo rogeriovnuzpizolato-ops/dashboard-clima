@@ -3,13 +3,17 @@ const searchBtn = document.getElementById("search-btn");
 const cityInfo = document.querySelector(".city-info");
 const cityWeather = document.querySelector(".weather-details");
 const details= document.querySelector(".detail")
+const umidityDiv= document.querySelector(".umidity");
+const windDiv= document.querySelector(".wind");
+const feelsDiv= document.querySelector(".feels");
 const cityTemperature= document.querySelector(".temperature");
 
 let cityName= document.getElementById("city-name");
 let weatherDescription= document.getElementById("weather-description");
 let temperature= document.getElementById("temperature");
 let humidity= document.getElementById("humidity");
-let windSpeed= document.getElementById("wind-speed")
+let windSpeed= document.getElementById("wind-speed");
+let feelsLike= document.getElementById("feels-like");
 
 
 const apiKey = "bd4b54e2cd361f225ec1cc3db59e923a";
@@ -30,15 +34,20 @@ function searchCity() {
      cityTemperature.innerHTML= `
      ${temperature=  `<span id="temperature">${Math.round(data.main.temp)}°C</span>`}
      `
-     details.innerHTML= `
+     umidityDiv.innerHTML= `
      <h3>💧 Umidade</h3>
      ${humidity= `<p id="humidity">${data.main.humidity}%</p>`}
-
-     <h3>🌬 Vento</h3>
-     ${windSpeed= `<p id="humidity">${data.wind.speed}km</p>`}
-     
      `
-     cityWeather.append(details.value);
+     windDiv.innerHTML= `
+     <h3>🌬 Vento</h3>
+     ${windSpeed= `<p id="wind-speed">${data.wind.speed} km/h</p>`}
+     `
+     feelsDiv.innerHTML= `
+     <h3>🌡 Sensação</h3>
+     ${feelsLike= `<p id="feels-like">${Math.round(data.main.feels_like)}°C</p>`}
+     `
+
+     cityWeather.append(umidityDiv, windDiv,feelsDiv);
     });
 }
 
